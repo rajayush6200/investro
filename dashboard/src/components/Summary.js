@@ -7,7 +7,7 @@ const Summary = () => {
  useEffect(() => {
   const token = localStorage.getItem("token");
   axios
-    .get("https://zerodha-clone-1-8l95.onrender.com/dashboard", {
+    .get("http://localhost:4000/dashboard", {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => setUsername(res.data.username))

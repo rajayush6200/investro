@@ -27,8 +27,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:3001",
-      "https://zerodha-clone-2-ccyx.onrender.com",
-      "https://zerodha-dashboard-m4gh.onrender.com",
+      "https://investro-frontend.onrender.com",
+      "https://investro-dashboard.onrender.com",
     ],
     credentials: true,
   })

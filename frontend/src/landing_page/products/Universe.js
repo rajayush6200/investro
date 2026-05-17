@@ -4,7 +4,7 @@ function Universe() {
   return (
     <div className="container mt-5">
       <div className="row text-center">
-        <h1>The Zerodha Universe</h1>
+        <h1>The INVESTRO Universe</h1>
         <p>
           Extend your trading and investment experience even further with our
           partner platforms
@@ -25,7 +25,7 @@ function Universe() {
         <div className="col-4 p-3 mt-5">
           <img
             style={{ width: "40%" }}
-            src="media/images/zerodhaFundhouse.png"
+            src="media/images/investroFundhouse.png"
           />
           <p className="text-small text-muted">Assest mangement</p>
         </div>

@@ -21,10 +21,10 @@ function CreateTicket() {
               <a href="#">NRI Account Opening</a>
             </li>
             <li>
-              <a href="#">Charges at Zerodha</a>
+              <a href="#">Charges at INVESTRO</a>
             </li>
             <li>
-              <a href="#">Zerodha IDFC FIRST Bank 3-in-1 Account</a>
+              <a href="#">INVESTRO IDFC FIRST Bank 3-in-1 Account</a>
             </li>
             <li>
               <a href="#">Getting Started</a>
@@ -32,7 +32,7 @@ function CreateTicket() {
           </ul>
         </div>
         <div className="col">
-          <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-circle-user me-3"></i>Your Zerodha Account</h3>
+          <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-circle-user me-3"></i>Your INVESTRO Account</h3>
           <ul className="listings">
             <li>
               <a href="#">Login Credentials</a>

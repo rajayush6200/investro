@@ -13,7 +13,7 @@ function Navbar() {
         if (!token) return setIsAuth(false);
 
         const res = await axios.get(
-          "https://zerodha-clone-1-8l95.onrender.com/dashboard",
+          "http://localhost:4000/dashboard",
           {
             headers: {
               Authorization: `Bearer ${token}`, // ✅ send token
@@ -36,7 +36,7 @@ function Navbar() {
 const handleLogout = () => {
   localStorage.removeItem("token");
   setIsAuth(false);
-  window.location.href = "https://zerodha-clone-2-ccyx.onrender.com"; // ✅ no /login
+  window.location.href = "http://localhost:3000"; // ✅ no /login
 };
 
   return (
@@ -84,7 +84,7 @@ const handleLogout = () => {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="https://zerodha-dashboard-m4gh.onrender.com"
+                    href="http://localhost:3001"
                   >
                     Dashboard
                   </a>{" "}
