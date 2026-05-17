@@ -1,0 +1,141 @@
+/* About page — theme-aware via CSS variables (see theme/theme.css) */
+
+.landing-content {
+  transition: color 0.25s ease;
+}
+
+.about-hero-title {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+}
+
+.landing-accent-text {
+  color: var(--landing-brand-highlight);
+}
+
+.about-hero-lead {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 1rem auto 0;
+}
+
+.landing-stat-band {
+  background: var(--bg-accent-soft);
+}
+
+.landing-stat-value {
+  color: var(--landing-brand);
+}
+
+.landing-stat-label {
+  font-size: 0.9rem;
+}
+
+.about-story-section {
+  line-height: 1.9;
+  font-size: 1.1em;
+}
+
+.about-section-heading {
+  color: var(--text-primary);
+}
+
+.about-section-title {
+  color: var(--text-primary);
+}
+
+.about-founder-layout {
+  line-height: 1.85;
+  font-size: 1.05em;
+}
+
+.team-avatar-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
+  margin-bottom: 18px;
+  border: 3px solid var(--avatar-ring);
+}
+
+.team-fallback-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--landing-brand) 0%, #1d4ed8 100%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
+  margin-bottom: 18px;
+}
+
+.team-founder-name {
+  color: var(--text-primary);
+}
+
+.team-founder-role {
+  font-size: 0.85rem;
+  color: var(--landing-brand);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-founder-meta {
+  font-size: 0.82rem;
+  color: var(--text-caption);
+}
+
+.team-social-link {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.team-social-link:hover {
+  color: var(--landing-brand);
+}
+
+.team-bio-strong {
+  color: var(--text-primary);
+}
+
+.team-quote {
+  border-left: 3px solid var(--landing-brand);
+  color: var(--text-quote);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.team-quote-attribution {
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--text-caption);
+}
+
+.values-band {
+  background: var(--bg-accent-soft);
+}
+
+.values-card-icon {
+  font-size: 2rem;
+}
+
+.values-card-title {
+  color: var(--text-primary);
+}
+
+.values-card-desc {
+  font-size: 0.85rem;
+}
+
+.about-section-subtitle {
+  font-size: 1rem;
+}

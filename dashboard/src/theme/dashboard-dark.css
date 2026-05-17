@@ -272,8 +272,16 @@ body,
   color: var(--dash-text-secondary);
 }
 
-[data-theme="dark"] .watchlist-chart {
+[data-theme="dark"] .watchlist-chart,
+[data-theme="dark"] .holdings-chart {
   background: var(--dash-surface);
+}
+
+.holdings-chart {
+  max-width: 100%;
+  margin-top: 1.5rem;
+  padding: 0 4px;
+  box-sizing: border-box;
 }
 
 [data-theme="dark"] .commodity p {

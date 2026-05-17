@@ -23,6 +23,11 @@
   --toggle-track-bg: #d1d5db;
   --toggle-track-bg-hover: #b8bec8;
   --toggle-track-border: #c4c9d0;
+  --landing-brand: #2563eb;
+  --landing-brand-highlight: #3b82f6;
+  --text-caption: #888888;
+  --text-quote: #444444;
+  --avatar-ring: #ffffff;
   color-scheme: light;
 }
 
@@ -51,6 +56,11 @@
   --toggle-track-border: #4b5d78;
   --toggle-track-bg-dark: #3b4a63;
   --toggle-track-border-dark: #4b5d78;
+  --landing-brand: #58a6ff;
+  --landing-brand-highlight: #79b8ff;
+  --text-caption: #8b949e;
+  --text-quote: #b0b8c4;
+  --avatar-ring: #1c2330;
   color-scheme: dark;
 }
 
@@ -203,60 +213,6 @@ body,
 
 .footer-link:hover {
   color: var(--accent-primary) !important;
-}
-
-/* Landing sections with inline colors */
-.landing-content,
-.container.p-5 {
-  transition: color 0.25s ease;
-}
-
-[data-theme="dark"] .landing-content h1,
-[data-theme="dark"] .landing-content h2,
-[data-theme="dark"] .landing-content h4,
-[data-theme="dark"] .landing-content h5,
-[data-theme="dark"] .landing-content h6,
-[data-theme="dark"] .landing-content strong {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .landing-content p,
-[data-theme="dark"] .landing-content li {
-  color: var(--text-secondary);
-}
-
-[data-theme="dark"] .landing-stat-band {
-  background: var(--bg-accent-soft) !important;
-}
-
-[data-theme="dark"] .landing-stat-band h2 {
-  color: var(--accent-primary) !important;
-}
-
-[data-theme="dark"] .landing-accent-text {
-  color: var(--accent-primary) !important;
-}
-
-[data-theme="dark"] .team-card {
-  background: var(--card-bg) !important;
-  border-color: var(--border-color) !important;
-}
-
-[data-theme="dark"] .team-avatar-ring {
-  border-color: var(--bg-elevated) !important;
-}
-
-[data-theme="dark"] .team-social-link {
-  color: var(--text-secondary) !important;
-}
-
-[data-theme="dark"] .team-quote {
-  background: var(--bg-muted) !important;
-  border-color: var(--border-color) !important;
-}
-
-[data-theme="dark"] .values-band {
-  background: var(--bg-accent-soft) !important;
 }
 
 /* Hero banner stays branded blue */
