@@ -10,7 +10,7 @@ function Hero() {
           alt="Hero image"
           className="mb-5 img-fluid"
         />
-        <h1 className="mt-5 ">Invest in evrything</h1>
+        <h1 className="mt-5 ">Invest in everything</h1>
         <p>
           Online platform to invest in stocks, derivatives, mutual funds, and
           more{" "}
