@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeToggle from "../theme/ThemeToggle";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
@@ -20,7 +21,7 @@ const Menu = () => {
   return (
     <div className="menu-container ">
       {/* <img src="logo.png" style={{ width: "50px" }} alt="logo" /> */}
-      <a style={{ textDecoration: "none" }} href="http://localhost:3000">
+      <a className="menu-home-link" style={{ textDecoration: "none" }} href="http://localhost:3000">
         <img
           src="logo.png"
           alt="INVESTRO logo"
@@ -29,7 +30,6 @@ const Menu = () => {
         <span
           style={{
             fontWeight: "bold",
-            color: "black",
             position: "relative",
             top: "-7px",
           }}
@@ -37,6 +37,10 @@ const Menu = () => {
           Home
         </span>
       </a>
+
+      <div className="theme-toggle-menu-wrap">
+        <ThemeToggle />
+      </div>
 
       <button
         type="button"

@@ -11,6 +11,17 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
      <meta name="description" content="INVESTRO - India's leading online trading platform. Invest in stocks, derivatives, mutual funds, and more." />
     <title>INVESTRO</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("investro-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.setAttribute("data-bs-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

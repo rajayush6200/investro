@@ -61,8 +61,8 @@ img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: #e9ecef;
-  color: #495057;
+  background-color: var(--bg-muted, #e9ecef);
+  color: var(--text-secondary, #495057);
   transition: all 0.3s ease;
 }
 
@@ -117,7 +117,7 @@ img {
 /* Auth pages: hide footer on mobile, minimal on tablet+ */
 .footer-auth {
   display: none;
-  background: #f8f9fa;
+  background: var(--footer-bg, #f8f9fa);
   margin-top: auto;
 }
 

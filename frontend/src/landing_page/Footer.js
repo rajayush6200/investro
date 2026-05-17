@@ -25,7 +25,7 @@ function Footer({ variant = "default" }) {
   }
 
   return (
-    <footer className="border-top mt-5" style={{ backgroundColor: "#f8f9fa", padding: "3rem 0" }}>
+    <footer className="border-top mt-5 investro-footer" style={{ padding: "3rem 0" }}>
       <div className="container">
         <div className="row text-center text-md-start">
           <div className="col-12 col-md-3 mb-4 mb-md-0">

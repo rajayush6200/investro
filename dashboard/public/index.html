@@ -26,6 +26,16 @@
     -->
       
     <title>INVESTRO Dashboard</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("investro-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

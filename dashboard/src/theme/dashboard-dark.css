@@ -1,0 +1,402 @@
+/* Dashboard dark mode — CSS variable layer + component overrides */
+:root,
+[data-theme="light"] {
+  --dash-bg: #ffffff;
+  --dash-surface: #ffffff;
+  --dash-surface-muted: #f9fafb;
+  --dash-border: #e5e7eb;
+  --dash-border-light: #f1f1f1;
+  --dash-text: #313131;
+  --dash-text-secondary: #494949;
+  --dash-text-muted: #999999;
+  --dash-text-faint: #b3b3b3;
+  --dash-shadow: rgb(236, 235, 235);
+  --dash-menu-hover: rgb(245, 104, 52);
+  --dash-topbar-shadow: rgb(236, 235, 235);
+  --dash-watchlist-hover: #f5f8ff;
+  --dash-chart-legend: #374151;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --dash-bg: #0f1419;
+  --dash-surface: #161b22;
+  --dash-surface-muted: #1c2330;
+  --dash-border: #30363d;
+  --dash-border-light: #21262d;
+  --dash-text: #e8eaed;
+  --dash-text-secondary: #c9d1d9;
+  --dash-text-muted: #8b949e;
+  --dash-text-faint: #6e7681;
+  --dash-shadow: rgba(0, 0, 0, 0.4);
+  --dash-menu-hover: #f0883e;
+  --dash-topbar-shadow: rgba(0, 0, 0, 0.35);
+  --dash-watchlist-hover: #1f2937;
+  --dash-chart-legend: #c9d1d9;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  background-color: var(--dash-bg);
+  color: var(--dash-text);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+[data-theme="dark"] .title,
+[data-theme="dark"] .col h5,
+[data-theme="dark"] .imp,
+[data-theme="dark"] .username h6,
+[data-theme="dark"] .data .first h3 {
+  color: var(--dash-text) !important;
+}
+
+[data-theme="dark"] .col p,
+[data-theme="dark"] .funds p,
+[data-theme="dark"] .order-table th,
+[data-theme="dark"] .order-table td,
+[data-theme="dark"] .table .data p:first-child,
+[data-theme="dark"] .data .second p,
+[data-theme="dark"] .data .first p,
+[data-theme="dark"] .no-orders p {
+  color: var(--dash-text-muted) !important;
+}
+
+[data-theme="dark"] .order-table td {
+  color: var(--dash-text-secondary) !important;
+}
+
+[data-theme="dark"] .order-table tr {
+  border-color: var(--dash-border-light) !important;
+}
+
+[data-theme="dark"] .order-table tr th:nth-child(1),
+[data-theme="dark"] .order-table tr th:nth-child(4),
+[data-theme="dark"] .order-table tr td:nth-child(1),
+[data-theme="dark"] .order-table tr td:nth-child(4) {
+  border-color: var(--dash-border-light) !important;
+}
+
+[data-theme="dark"] .table {
+  border-color: var(--dash-border);
+  background: var(--dash-surface);
+}
+
+[data-theme="dark"] .table hr,
+[data-theme="dark"] .divider,
+[data-theme="dark"] .section hr {
+  background: var(--dash-border) !important;
+}
+
+[data-theme="dark"] .menu {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .menu.selected,
+[data-theme="dark"] .menu:hover {
+  color: var(--dash-menu-hover);
+}
+
+[data-theme="dark"] .menu-home-link span {
+  color: var(--dash-text) !important;
+}
+
+[data-theme="dark"] hr {
+  border-color: var(--dash-border-light);
+}
+
+[data-theme="dark"] .profile .avatar {
+  background: #2d1f3d;
+  color: #d8b4fe;
+}
+
+[data-theme="dark"] .profile .username {
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .topbar-container {
+  background: var(--dash-surface);
+  box-shadow: 0 0 4px 2px var(--dash-topbar-shadow);
+}
+
+[data-theme="dark"] .indices-container {
+  border-color: var(--dash-border) !important;
+  background: var(--dash-surface);
+}
+
+[data-theme="dark"] .index {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .percent {
+  color: var(--dash-text-faint);
+}
+
+[data-theme="dark"] .menu-container {
+  background: var(--dash-surface);
+}
+
+[data-theme="dark"] .menu-toggle-bar {
+  background: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .menus.menus-open {
+  background: var(--dash-surface);
+  border-color: var(--dash-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .menus hr {
+  background: var(--dash-border) !important;
+}
+
+[data-theme="dark"] .content {
+  background: var(--dash-bg);
+}
+
+[data-theme="dark"] .section-icon {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .data hr {
+  border-color: var(--dash-border);
+}
+
+[data-theme="dark"] .data .second p span {
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .watchlist-container {
+  background: var(--dash-surface);
+  box-shadow: 0 0 4px 1px var(--dash-shadow);
+}
+
+[data-theme="dark"] .search {
+  background: var(--dash-surface-muted);
+  color: var(--dash-text);
+  border-bottom-color: var(--dash-border);
+}
+
+[data-theme="dark"] .search::placeholder {
+  color: var(--dash-text-faint);
+}
+
+[data-theme="dark"] .counts {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .watchlist-item {
+  background: var(--dash-surface);
+  border-bottom-color: var(--dash-border);
+}
+
+[data-theme="dark"] .watchlist-item:hover,
+[data-theme="dark"] .watchlist-item:focus-within {
+  background-color: var(--dash-watchlist-hover);
+}
+
+[data-theme="dark"] .stock-name {
+  color: var(--dash-text);
+}
+
+[data-theme="dark"] .stock-data .price {
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .stock-data .percent {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .watchlist-actions {
+  background: linear-gradient(to right, transparent 0%, var(--dash-watchlist-hover) 25%);
+}
+
+[data-theme="dark"] .watchlist-item:hover .watchlist-actions {
+  background: linear-gradient(to right, transparent 0%, var(--dash-watchlist-hover) 25%);
+}
+
+[data-theme="dark"] .action-icon {
+  background-color: var(--dash-surface-muted);
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .action-icon:hover {
+  background-color: var(--dash-border);
+}
+
+[data-theme="dark"] .watchlist-number {
+  background: var(--dash-surface);
+  border-color: var(--dash-border);
+}
+
+[data-theme="dark"] .watchlist-number ul li {
+  border-color: var(--dash-border);
+}
+
+[data-theme="dark"] .watchlist-number ul li:hover {
+  background: var(--dash-surface-muted);
+}
+
+[data-theme="dark"] .settings {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .data-card {
+  background: var(--dash-surface);
+  border-color: var(--dash-border);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.35));
+}
+
+[data-theme="dark"] .data-card-header {
+  border-color: var(--dash-border-light);
+}
+
+[data-theme="dark"] .data-card-title {
+  color: var(--dash-text);
+}
+
+[data-theme="dark"] .data-card-subtitle,
+[data-theme="dark"] .data-card-label {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] .data-card-value {
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .data-card-badge {
+  background: var(--dash-surface-muted);
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] .watchlist-chart {
+  background: var(--dash-surface);
+}
+
+[data-theme="dark"] .commodity p {
+  color: var(--dash-text-muted);
+}
+
+/* Buy/Sell modal */
+[data-theme="dark"] #buy-window,
+[data-theme="dark"] #sell-window {
+  background: var(--dash-surface-muted) !important;
+  border-color: var(--dash-border) !important;
+}
+
+[data-theme="dark"] #buy-window .tab,
+[data-theme="dark"] #sell-window .tab {
+  background-color: var(--dash-surface-muted) !important;
+  border-bottom-color: var(--dash-border) !important;
+}
+
+[data-theme="dark"] #buy-window .regular-order,
+[data-theme="dark"] #sell-window .regular-order {
+  background-color: var(--dash-surface) !important;
+}
+
+[data-theme="dark"] #buy-window .regular-order label,
+[data-theme="dark"] #buy-window .market-options,
+[data-theme="dark"] #buy-window h1,
+[data-theme="dark"] #sell-window .regular-order label,
+[data-theme="dark"] #sell-window .market-options,
+[data-theme="dark"] #sell-window h1 {
+  color: var(--dash-text-secondary);
+}
+
+[data-theme="dark"] #buy-window .inputs fieldset,
+[data-theme="dark"] #sell-window .inputs fieldset {
+  border-color: var(--dash-border);
+  background: var(--dash-surface-muted);
+}
+
+[data-theme="dark"] #buy-window .inputs fieldset legend,
+[data-theme="dark"] #sell-window .inputs fieldset legend {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] #buy-window .inputs fieldset input,
+[data-theme="dark"] #sell-window .inputs fieldset input {
+  background: transparent;
+  color: var(--dash-text);
+}
+
+[data-theme="dark"] #buy-window .order-validity label span,
+[data-theme="dark"] #sell-window .order-validity label span {
+  color: var(--dash-text-faint);
+}
+
+[data-theme="dark"] #buy-window .buttons span,
+[data-theme="dark"] #sell-window .buttons span {
+  color: var(--dash-text-muted);
+}
+
+[data-theme="dark"] #buy-window .btn-grey,
+[data-theme="dark"] #sell-window .btn-grey {
+  background: #4b5563;
+  color: #e5e7eb;
+}
+
+/* Mobile watchlist drawer */
+@media (max-width: 991px) {
+  [data-theme="dark"] .watchlist-container {
+    background: var(--dash-surface) !important;
+  }
+
+  [data-theme="dark"] .watchlist-mobile-header,
+  [data-theme="dark"] .search-container {
+    background: var(--dash-surface);
+    border-color: var(--dash-border);
+  }
+
+  [data-theme="dark"] .watchlist-mobile-header h2 {
+    color: var(--dash-text);
+  }
+
+  [data-theme="dark"] .watchlist-close-btn,
+  [data-theme="dark"] .action-icon {
+    background: var(--dash-surface-muted) !important;
+    border-color: var(--dash-border);
+    color: var(--dash-text-secondary);
+  }
+
+  [data-theme="dark"] .watchlist-actions {
+    background: var(--dash-surface-muted) !important;
+    border-color: var(--dash-border);
+  }
+
+  [data-theme="dark"] .menus {
+    background: var(--dash-surface);
+  }
+}
+
+/* Profit/loss colors stay visible in dark mode */
+[data-theme="dark"] .order-table td.profit,
+[data-theme="dark"] .up,
+[data-theme="dark"] .row .col:last-child h5 {
+  color: rgb(72, 194, 55) !important;
+}
+
+[data-theme="dark"] .order-table td.loss,
+[data-theme="dark"] .down,
+[data-theme="dark"] .index-points {
+  color: rgb(248, 113, 113) !important;
+}
+
+[data-theme="dark"] .colored {
+  color: #58a6ff !important;
+}
+
+/* MUI tooltips */
+[data-theme="dark"] .MuiTooltip-tooltip {
+  background-color: var(--dash-surface-muted) !important;
+  color: var(--dash-text) !important;
+  border: 1px solid var(--dash-border);
+}
+
+[data-theme="dark"] .no-orders .icon {
+  color: var(--dash-text-faint);
+}

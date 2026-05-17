@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ThemeToggle from "../theme/ThemeToggle";
 
 function Navbar() {
   const [isAuth, setIsAuth] = useState(false);
@@ -40,7 +41,7 @@ const handleLogout = () => {
 };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light border-bottom">
+    <nav className="navbar navbar-expand-lg border-bottom investro-navbar">
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img src="/media/images/logo.svg" alt="INVESTRO logo" />
@@ -117,6 +118,10 @@ const handleLogout = () => {
               <Link className="nav-link" to="/support">
                 Support
               </Link>
+            </li>
+
+            <li className="nav-item theme-toggle-nav-item d-flex align-items-center">
+              <ThemeToggle />
             </li>
           </ul>
         </div>

@@ -2,14 +2,14 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="container">
+    <div className="container landing-content">
 
       {/* ── Hero Banner ── */}
       <div className="row p-5 mt-5 mb-3 text-center">
         <h1 className="fw-bold" style={{ fontSize: "2.2rem", color: "#1a1a2e" }}>
           Building India's Next-Generation
           <br />
-          <span style={{ color: "#3b82f6" }}>Trading &amp; Investment Platform</span>
+          <span className="landing-accent-text" style={{ color: "#3b82f6" }}>Trading &amp; Investment Platform</span>
         </h1>
         <p className="text-muted mt-3" style={{ fontSize: "1.1rem", maxWidth: "650px", margin: "1rem auto 0" }}>
           INVESTRO was founded with one belief: every Indian investor deserves
@@ -20,7 +20,7 @@ function Hero() {
 
       {/* ── Stats Bar ── */}
       <div
-        className="row text-center border-top border-bottom py-4 mb-5"
+        className="row text-center border-top border-bottom py-4 mb-5 landing-stat-band"
         style={{ background: "#f8faff" }}
       >
         <div className="col-12 col-md-4 mb-3 mb-md-0">

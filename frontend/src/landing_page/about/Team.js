@@ -2,7 +2,7 @@ import React from "react";
 
 function Team() {
   return (
-    <div className="container">
+    <div className="container landing-content">
       {/* ── Section Header ── */}
       <div className="row p-3 mt-5 border-top text-center">
         <h2 className="fw-bold" style={{ color: "#1a1a2e" }}>Meet the Founder</h2>
@@ -23,13 +23,13 @@ function Team() {
               at this exact location: 
               frontend/public/media/images/founder.jpg 
           */}
-          <img 
-            src="media/images/founder.jpg" 
+          <img
+            className="team-avatar-ring"
+            src="media/images/founder.jpg"
             alt="Ayush Raj - Founder & CEO"
             onError={(e) => {
-              // Fallback to CSS monogram if image not found
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
+              e.target.style.display = "none";
+              e.target.nextSibling.style.display = "flex";
             }}
             style={{
               width: "140px",
@@ -38,7 +38,7 @@ function Team() {
               objectFit: "cover",
               boxShadow: "0 8px 32px rgba(37,99,235,0.25)",
               marginBottom: "18px",
-              border: "3px solid #fff"
+              border: "3px solid #fff",
             }}
           />
           <div
@@ -136,7 +136,7 @@ function Team() {
 
           {/* Quote */}
           <blockquote
-            className="mt-4 ps-3"
+            className="mt-4 ps-3 team-quote"
             style={{
               borderLeft: "3px solid #2563eb",
               color: "#444",
@@ -156,7 +156,7 @@ function Team() {
 
       {/* ── Values Strip ── */}
       <div
-        className="row text-center border-top pt-4 pb-5"
+        className="row text-center border-top pt-4 pb-5 values-band"
         style={{ background: "#f8faff" }}
       >
         <h5 className="fw-semibold mb-4" style={{ color: "#1a1a2e" }}>What We Stand For</h5>
