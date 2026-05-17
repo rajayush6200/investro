@@ -36,7 +36,7 @@ function Footer() {
             <br />
             <a href="">Support portal</a>
             <br />
-            <a href="">Z-Connect blog</a>
+            <a href="">INVESTRO blog</a>
             <br />
             <a href="">List of charges</a>
             <br />

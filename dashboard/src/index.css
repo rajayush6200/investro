@@ -667,96 +667,152 @@ hr {
   color: rgb(177, 177, 177);
 }
 
+/* ===== WATCHLIST LIST ===== */
 .list {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
   padding-bottom: 12%;
 }
 
-.list li {
-  border-bottom: 0.8px solid rgb(235, 234, 234);
-  padding: 12px 10px 12px 14px;
+/* Each stock row */
+.watchlist-item {
   position: relative;
-}
-
-.item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 300;
-  font-size: 0.8rem;
-  position: relative;
+  border-bottom: 0.8px solid rgb(235, 234, 234);
+  padding: 10px 12px;
+  transition: background-color 0.15s ease;
+  overflow: hidden;
 }
 
-.item-info {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.item-info > * {
-  margin-right: 8px;
-}
-
-.item-info span:nth-child(1) {
-  color: rgb(141, 141, 141);
-  flex: 1;
-}
-
-.item-info span:nth-child(2) {
-  color: rgb(223, 73, 73);
-  margin-right: 12px;
-  flex: 2;
-}
-
-.item-info span:nth-child(3) {
-  color: rgb(223, 73, 73);
-  flex: 1;
-}
-
-.actions {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  display: none;
-}
-
-.actions span button {
-  width: 40px;
-  height: 30px;
-  border-radius: 4px;
-  text-align: center;
-  margin-right: 8px;
+.watchlist-item:hover {
+  background-color: #f5f8ff;
   cursor: pointer;
 }
 
-.buy {
-  background-color: #4184f3;
+/* Stock name + price always visible */
+.stock-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  transition: opacity 0.15s ease;
+}
+
+.stock-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  margin: 0;
+}
+
+.stock-data {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  transition: opacity 0.15s ease;
+}
+
+.stock-data .percent {
+  color: rgb(141, 141, 141);
+  font-size: 0.75rem;
+}
+
+.stock-data .price {
+  color: rgb(60, 60, 60);
+  font-weight: 500;
+  min-width: 42px;
+  text-align: right;
+}
+
+.arrow-icon {
+  font-size: 16px !important;
+}
+
+/* Action buttons — hidden until hover, slide in from right */
+.watchlist-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  background: linear-gradient(to right, transparent 0%, #f5f8ff 25%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  z-index: 2;
+}
+
+.watchlist-item:hover .watchlist-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Slightly dim stock data when actions appear so buttons are visually clear */
+.watchlist-item:hover .stock-data {
+  opacity: 0.4;
+}
+
+.action-buy {
+  background-color: #2563eb;
   color: #fff;
-  font-weight: 400;
-  font-size: 0.8rem;
-  border: 0.7px solid #4184f3;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  letter-spacing: 0.02em;
 }
 
-.sell {
-  background-color: #ff5722;
+.action-buy:hover {
+  background-color: #1d4ed8;
+}
+
+.action-sell {
+  background-color: #dc2626;
   color: #fff;
-  font-weight: 400;
-  font-size: 0.8rem;
-  border: 0.7px solid #ff5722;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  letter-spacing: 0.02em;
 }
 
-.action {
-  background-color: #fff;
-  border: 0.7px solid #9b9b9b;
+.action-sell:hover {
+  background-color: #b91c1c;
 }
 
-.icon {
-  transform: scale(0.7);
-  color: rgb(65, 65, 65);
+.action-icon {
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  color: #555;
+}
+
+.action-icon:hover {
+  background-color: #e5e7eb;
 }
 
 .watchlist-number {
@@ -817,17 +873,6 @@ hr {
   cursor: move;
 }
 
-/* TODO */
-.list li::before {
-  content: "";
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .watchlist-number ul li:hover {
   color: rgb(245, 104, 52);
   cursor: pointer;
@@ -836,100 +881,4 @@ hr {
 
 .settings:hover {
   cursor: pointer;
-}
-
-.action:hover {
-  background-color: rgb(212, 212, 212);
-}
-
-
-/* 2nd  */
-.list li {
-  position: relative;
-}
-
-.item {
-  padding-right: 140px;
-}
-
-.actions {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  background: white;
-  padding: 6px 8px;
-  border-radius: 6px;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 10;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.2s ease;
-}
-
-.list li:hover .actions {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.buy {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: 0.2s ease;
-}
-
-.buy:hover {
-  background-color: #43a047;
-}
-
-.sell {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: 0.2s ease;
-}
-
-.sell:hover {
-  background-color: #e53935;
-}
-
-.action {
-  background-color: #f5f5f5;
-  border: none;
-  padding: 6px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.action:hover {
-  background-color: #e0e0e0;
-}
-
-.icon {
-  font-size: 18px;
-  color: #555;
-}
-
-.list li:hover {
-  background-color: #f9f9f9;
 }

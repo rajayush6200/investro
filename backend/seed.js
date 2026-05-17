@@ -26,7 +26,7 @@ const positionsData = [
 
 async function seed() {
   try {
-    await mongoose.connect(uri);
+    await mongoose.connect(uri, { dbName: "investro" });
     console.log("✅ DB connected");
 
     await HoldingsModel.deleteMany({});

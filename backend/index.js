@@ -157,7 +157,7 @@ app.get("/test", (req, res) => {
 // ================= DB CONNECT =================
 
 mongoose
-  .connect(uri)
+  .connect(uri, { dbName: "investro" })
   .then(() => console.log(" DB connected"))
   .catch((err) => console.log("❌ DB error:", err));
 
