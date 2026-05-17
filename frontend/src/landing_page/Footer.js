@@ -68,10 +68,9 @@ function Footer() {
             </a>
           </div>
 
-          {/* Branding Area */}
-          <p className="mb-3 text-dark fw-bold" style={{ fontSize: "15px", letterSpacing: "0.5px" }}>
-            © 2025 INVESTRO · Built by Ayush
-          </p>
+          <div className="f-info-brand fw-bold">
+            &copy; {new Date().getFullYear()} INVESTRO · Built by Ayush
+          </div>
 
           {/* Legal Links */}
           <div className="d-flex gap-3 mt-1">
