@@ -14,10 +14,12 @@ import NotFound from "./landing_page/NotFound";
 import Login from "./landing_page/signup/Login";
 import PrivacyPolicy from "./landing_page/legal/PrivacyPolicy";
 import TermsOfService from "./landing_page/legal/TermsOfService";
+import ScrollToTop from "./ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+    <ScrollToTop />
   <Navbar/>
     <Routes>
       <Route path="/" element={<HomePage />}></Route>
