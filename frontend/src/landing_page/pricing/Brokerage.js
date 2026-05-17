@@ -5,7 +5,7 @@ function Brokerage() {
   return (
     <div className="container border-top p-5">
       <div className="row">
-        <div className="col-8">
+        <div className="col-12 col-lg-8 mb-4 mb-lg-0">
           <a href="" className="text-decoration-none">
             <h1 className="fs-5 text-center mb-5 ">Brokerage calcultor</h1>
           </a>
@@ -27,7 +27,7 @@ function Brokerage() {
             </li>
           </ul>
         </div>
-        <div className="col-4 text-center">
+        <div className="col-12 col-lg-4 text-center">
           <a href="" className="text-decoration-none">
             <h1 className="fs-5 ">List of charges</h1>
           </a>

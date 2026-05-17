@@ -17,7 +17,7 @@ function Team() {
         style={{ lineHeight: "1.85", fontSize: "1.05em" }}
       >
         {/* Avatar / Photo Column */}
-        <div className="col-4 text-center d-flex flex-column align-items-center justify-content-start pt-3">
+        <div className="col-12 col-md-4 text-center d-flex flex-column align-items-center justify-content-start pt-3 mb-4 mb-md-0">
           {/* Founder Image 
               TODO: Place your professional square/circular photo (e.g. 400x400) 
               at this exact location: 
@@ -106,7 +106,7 @@ function Team() {
         </div>
 
         {/* Bio Column */}
-        <div className="col-8 p-4 text-muted">
+        <div className="col-12 col-md-8 p-4 text-muted">
           <p>
             <strong style={{ color: "#1a1a2e" }}>Ayush Raj</strong> is a fintech
             builder and software engineer who founded INVESTRO in 2025 with a
@@ -166,7 +166,7 @@ function Team() {
           { icon: "🛡️", title: "Security", desc: "Bank-grade encryption & auth." },
           { icon: "📈", title: "Growth", desc: "Tools that help you invest better." },
         ].map((v) => (
-          <div className="col-3 px-3" key={v.title}>
+          <div className="col-6 col-md-3 px-3 mb-4" key={v.title}>
             <div style={{ fontSize: "2rem" }}>{v.icon}</div>
             <p className="fw-semibold mt-2 mb-1" style={{ color: "#1a1a2e" }}>{v.title}</p>
             <p className="text-muted" style={{ fontSize: "0.85rem" }}>{v.desc}</p>

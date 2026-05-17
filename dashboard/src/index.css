@@ -655,8 +655,13 @@ hr {
   padding: 15px 20px;
   font-size: 0.9rem;
   font-weight: 400;
-  color: rgb(241, 241, 241);
+  color: #1f2937;
+  background: #fff;
   border-bottom: 0.8px solid rgb(235, 234, 234);
+}
+
+.search::placeholder {
+  color: #9ca3af;
 }
 
 .counts {
@@ -678,16 +683,23 @@ hr {
 /* Each stock row */
 .watchlist-item {
   position: relative;
+  border-bottom: 0.8px solid rgb(235, 234, 234);
+  padding: 0;
+  transition: background-color 0.15s ease;
+  background: #fff;
+}
+
+.watchlist-item-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 0.8px solid rgb(235, 234, 234);
   padding: 10px 12px;
-  transition: background-color 0.15s ease;
+  position: relative;
   overflow: hidden;
 }
 
-.watchlist-item:hover {
+.watchlist-item:hover,
+.watchlist-item:focus-within {
   background-color: #f5f8ff;
   cursor: pointer;
 }
@@ -759,9 +771,11 @@ hr {
   pointer-events: auto;
 }
 
-/* Slightly dim stock data when actions appear so buttons are visually clear */
-.watchlist-item:hover .stock-data {
-  opacity: 0.4;
+/* Dim stock data on hover — desktop only */
+@media (min-width: 992px) {
+  .watchlist-item:hover .stock-data {
+    opacity: 0.4;
+  }
 }
 
 .action-buy {
@@ -881,4 +895,563 @@ hr {
 
 .settings:hover {
   cursor: pointer;
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+:root {
+  --topbar-height: 10vh;
+  --watchlist-drawer-width: min(360px, 92vw);
+}
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.order-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.order-table table {
+  min-width: 640px;
+}
+
+.watchlist-chart {
+  max-width: 100%;
+  padding: 12px 16px 24px;
+  box-sizing: border-box;
+}
+
+.watchlist-mobile-header {
+  display: none;
+}
+
+.watchlist-toggle-btn,
+.watchlist-backdrop {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #444;
+  border-radius: 2px;
+}
+
+/* Touch devices: show buy/sell without hover (desktop sidebar only) */
+@media (hover: none) and (min-width: 992px), (pointer: coarse) and (min-width: 992px) {
+  .watchlist-actions {
+    opacity: 1;
+    pointer-events: auto;
+    background: linear-gradient(to right, #fff 40%, #f5f8ff 100%);
+  }
+
+  .action-buy,
+  .action-sell,
+  .action-icon {
+    min-height: 36px;
+    min-width: 36px;
+    padding: 6px 10px;
+  }
+}
+
+/* ===== DATA CARDS (mobile tables) ===== */
+.table-desktop {
+  display: block;
+}
+
+.data-cards {
+  display: none;
+}
+
+.data-card {
+  background: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.data-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.data-card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.data-card-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.data-card-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.data-card-badge.badge-buy {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.data-card-badge.badge-sell {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.data-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.data-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.data-card-label {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.data-card-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.data-cards-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  .table-desktop {
+    display: none !important;
+  }
+
+  .data-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .order-table.table-desktop {
+    display: none !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .content {
+    padding: 2% 1.5%;
+  }
+
+  .data {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .data hr {
+    display: none;
+  }
+
+  .menus li {
+    margin-right: 16px;
+  }
+
+  .col h5 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile & small tablet */
+@media (max-width: 991px) {
+  :root {
+    --topbar-height: auto;
+  }
+
+  .topbar-container {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+    padding: 8px 0;
+  }
+
+  .indices-container {
+    flex: 1 1 100%;
+    border-right: none;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 8px 12px;
+    justify-content: space-between;
+  }
+
+  .nifty,
+  .sensex {
+    flex: 1;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .menu-container {
+    flex: 1 1 100%;
+    position: relative;
+    padding: 8px 12px;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-home-link span {
+    display: none;
+  }
+
+  .menus {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 12px;
+    left: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 12px 16px;
+    z-index: 200;
+    box-sizing: border-box;
+  }
+
+  .menus.menus-open {
+    display: flex;
+  }
+
+  .menus ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .menus li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  .menus hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: #eee;
+    margin: 8px 0;
+  }
+
+  .profile {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 120px);
+  }
+
+  .content {
+    flex-basis: 100%;
+    width: 100%;
+    min-height: 60vh;
+    padding: 16px 12px 24px;
+  }
+
+  .watchlist-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 90;
+    background: #4184f3;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(65, 132, 243, 0.45);
+    cursor: pointer;
+  }
+
+  .watchlist-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    z-index: 95;
+    cursor: pointer;
+  }
+
+  .watchlist-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--watchlist-drawer-width);
+    height: 100vh;
+    max-height: 100vh;
+    flex-basis: auto;
+    z-index: 100;
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .watchlist-container.watchlist-open {
+    transform: translateX(0);
+  }
+
+  .watchlist-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .search-container {
+    background: #fff;
+    position: sticky;
+    top: 57px;
+    z-index: 2;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .search {
+    color: #111827;
+    background: #f9fafb;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+  }
+
+  .counts {
+    color: #6b7280;
+    font-weight: 500;
+  }
+
+  .list {
+    padding-bottom: 100px;
+    background: #fff;
+  }
+
+  .watchlist-item {
+    background: #fff;
+    border-bottom: 1px solid #eef0f2;
+  }
+
+  .watchlist-item-main {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 16px;
+    overflow: visible;
+  }
+
+  .stock-info {
+    width: 100%;
+  }
+
+  .stock-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .stock-data {
+    opacity: 1 !important;
+    font-size: 0.85rem;
+  }
+
+  .stock-data .percent {
+    color: #4b5563;
+    font-weight: 500;
+  }
+
+  .stock-data .price {
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .watchlist-actions {
+    position: static;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: #f8fafc !important;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    padding: 10px 0 0;
+    border-top: 1px solid #e5e7eb;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .action-buy,
+  .action-sell {
+    flex: 1;
+    min-height: 40px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  .action-icon {
+    min-height: 40px;
+    min-width: 40px;
+    border-radius: 6px;
+    background: #fff !important;
+    border: 1px solid #e5e7eb;
+  }
+
+  .watchlist-chart {
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .watchlist-mobile-header h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .watchlist-close-btn {
+    background: #f3f4f6;
+    border: none;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .watchlist-number {
+    width: var(--watchlist-drawer-width);
+    left: 0;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .col {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .table {
+    padding: 5% 4%;
+  }
+
+  .funds {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .orders {
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .username h6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .index,
+  .index-points,
+  .percent {
+    font-size: 0.72rem;
+  }
+
+  .search {
+    font-size: 0.8rem;
+    padding: 12px 14px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .order-table th,
+  .order-table td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+
+  .data .first h3 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
 }

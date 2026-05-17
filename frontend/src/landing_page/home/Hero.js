@@ -8,18 +8,17 @@ function Hero() {
         <img
           src="media/images/homeHero.png"
           alt="Hero image"
-          className="mb-5"
+          className="mb-5 img-fluid"
         />
         <h1 className="mt-5 ">Invest in evrything</h1>
         <p>
           Online platform to invest in stocks, derivatives, mutual funds, and
           more{" "}
         </p>
-        <Link to="/signup">
+        <Link to="/signup" className="d-inline-block">
           <button
-            style={{ width: "15%", margin: "0 auto" }}
             type="button"
-            className=" p-2 btn btn-primary fs-5 mb-5"
+            className="p-2 btn btn-primary fs-5 mb-5 btn-cta"
           >
             Signup
           </button>

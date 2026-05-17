@@ -3,7 +3,7 @@ function Stats() {
     return ( 
         <div className="container p-6 mb-5">
          <div className="row p-6">
-            <div className="col-6 p-6">
+            <div className="col-12 col-lg-6 p-3 p-lg-6">
              <h1 className="fs-2 mb-5">Trust with confidence</h1>
              <h2 className="fs-4">Customer-first always</h2>
              <p className="text-muted">That's why 1.3+ crore customers trust INVESTRO with ₹3.5+ lakh crores worth of equity investments.</p>  
@@ -14,11 +14,11 @@ function Stats() {
              <h2 className="fs-4">Do better with money</h2>
              <p className="text-muted">With initiatives like Nudge and Kill Switch, we don't just facilitate transactions, but actively help you do better with your money.</p>
             </div>
-            <div className="col-6 p-6 mb-5">
-                <img src="media\images\ecosystem.png" style={{width: "90%"}} />
-                <div className="text-center">
-                    <a href="" className="mx-5" style={{textDecoration: "None"}}>Explore Our products<i className="fa-solid fa-arrow-right-long mx-2"></i></a>
-                    <a href=""  style={{textDecoration: "None"}} >Try kit demo<i className="fa-solid fa-arrow-right-long mx-2"></i></a>
+            <div className="col-12 col-lg-6 p-3 p-lg-6 mb-5 text-center text-lg-start">
+                <img src="media/images/ecosystem.png" className="img-fluid mb-4" alt="INVESTRO ecosystem" style={{maxWidth: "90%"}} />
+                <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="" style={{textDecoration: "none"}}>Explore Our products<i className="fa-solid fa-arrow-right-long mx-2"></i></a>
+                    <a href="" style={{textDecoration: "none"}}>Try kit demo<i className="fa-solid fa-arrow-right-long mx-2"></i></a>
                 </div>
             </div>
 

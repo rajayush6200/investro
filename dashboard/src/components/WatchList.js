@@ -12,7 +12,7 @@ import {
   MoreHoriz,
 } from "@mui/icons-material";
 
-const WatchList = () => {
+const WatchList = ({ className = "", onClose }) => {
   const data = {
     labels: watchlist.map((stock) => stock.name),
     datasets: [
@@ -32,7 +32,20 @@ const WatchList = () => {
     ],
   };
   return (
-    <div className="watchlist-container">
+    <div className={`watchlist-container ${className}`.trim()}>
+      <div className="watchlist-mobile-header">
+        <h2>Watchlist</h2>
+        {onClose && (
+          <button
+            type="button"
+            className="watchlist-close-btn"
+            onClick={onClose}
+            aria-label="Close watchlist"
+          >
+            ✕
+          </button>
+        )}
+      </div>
       <div className="search-container">
         <input
           type="text"
@@ -59,24 +72,23 @@ export default WatchList;
 const WatchListItem = ({ stock }) => {
   return (
     <li className="watchlist-item">
-      {/* Stock info — always visible */}
-      <div className="stock-info">
-        <p className={`stock-name ${stock.isDown ? "down" : "up"}`}>
-          {stock.name}
-        </p>
-        <div className="stock-data">
-          <span className="percent">{stock.percent}</span>
-          {stock.isDown ? (
-            <KeyboardArrowDown className="arrow-icon down" />
-          ) : (
-            <KeyboardArrowUp className="arrow-icon up" />
-          )}
-          <span className="price">{stock.price}</span>
+      <div className="watchlist-item-main">
+        <div className="stock-info">
+          <p className={`stock-name ${stock.isDown ? "down" : "up"}`}>
+            {stock.name}
+          </p>
+          <div className="stock-data">
+            <span className="percent">{stock.percent}</span>
+            {stock.isDown ? (
+              <KeyboardArrowDown className="arrow-icon down" />
+            ) : (
+              <KeyboardArrowUp className="arrow-icon up" />
+            )}
+            <span className="price">{stock.price}</span>
+          </div>
         </div>
+        <WatchListActions uuid={stock.name} />
       </div>
-
-      {/* Action buttons — appear on hover via CSS, slide in from right */}
-      <WatchListActions uuid={stock.name} />
     </li>
   );
 };

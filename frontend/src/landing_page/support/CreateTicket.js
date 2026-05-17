@@ -5,8 +5,8 @@ function CreateTicket() {
     <div className="container ">
       <h1 className="mt-5 fs-2">To create a ticket, select a relevant topic</h1>
       <div className="row mb-5 mt-5">
-        <div className="col">
-          <h3 className="text-muted mb-5 fs-5"> <i class="fa-solid fa-plus me-3"></i>Account Opening</h3>
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
+          <h3 className="text-muted mb-4 fs-5"><i className="fa-solid fa-plus me-3"></i>Account Opening</h3>
           <ul className="listings">
             <li>
               <a href="#">Online Account Opening</a>
@@ -31,7 +31,7 @@ function CreateTicket() {
             </li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
           <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-circle-user me-3"></i>Your INVESTRO Account</h3>
           <ul className="listings">
             <li>
@@ -51,7 +51,7 @@ function CreateTicket() {
             </li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
           <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-chart-area me-3"></i>Kite</h3>
           <ul className="listings">
             <li>
@@ -85,7 +85,7 @@ function CreateTicket() {
         </div>
       </div>
       <div className="row">
-        <div className="col ">
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
           <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-money-bill me-3"></i>Funds</h3>
           <ul className="listings">
             <li>
@@ -102,7 +102,7 @@ function CreateTicket() {
             </li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
           <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-circle-notch me-3"></i>Console</h3>
           <ul className="listings">
             <li>
@@ -125,7 +125,7 @@ function CreateTicket() {
             </li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col-12 col-md-6 col-lg-4 mb-4">
           <h3 className="text-muted mb-5 fs-5"><i class="fa-solid fa-coins me-3"></i>Coin</h3>
           <ul className="listings">
             <li>

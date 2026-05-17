@@ -1,7 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ variant = "default" }) {
+  if (variant === "auth") {
+    return (
+      <footer className="footer-auth border-top">
+        <div className="container py-3">
+          <div className="d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-sm-between gap-2 text-center text-sm-start">
+            <span className="text-muted small mb-0">
+              &copy; {new Date().getFullYear()} INVESTRO
+            </span>
+            <div className="d-flex gap-3">
+              <Link to="/privacy" className="text-muted text-decoration-none small footer-link">
+                Privacy
+              </Link>
+              <Link to="/terms" className="text-muted text-decoration-none small footer-link">
+                Terms
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="border-top mt-5" style={{ backgroundColor: "#f8f9fa", padding: "3rem 0" }}>
       <div className="container">
@@ -12,7 +34,7 @@ function Footer() {
               Empowering your financial journey with modern investment tools.
             </p>
           </div>
-          
+
           <div className="col-6 col-md-3 mb-4 mb-md-0">
             <h5 className="mb-3 text-dark" style={{ fontSize: "16px", fontWeight: "600" }}>Company</h5>
             <div className="d-flex flex-column gap-2">
@@ -46,11 +68,8 @@ function Footer() {
 
         <hr className="my-5" style={{ opacity: 0.1 }} />
 
-        {/* Bottom Footer Section */}
         <div className="d-flex flex-column align-items-center justify-content-center text-center">
-          
-          {/* Social Icons */}
-          <div className="d-flex gap-4 mb-4">
+          <div className="d-flex gap-4 mb-4 flex-wrap justify-content-center">
             <a href="mailto:rajayush6200@gmail.com" className="social-icon" aria-label="Email">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </a>
@@ -72,13 +91,11 @@ function Footer() {
             &copy; {new Date().getFullYear()} INVESTRO · Built by Ayush
           </div>
 
-          {/* Legal Links */}
-          <div className="d-flex gap-3 mt-1">
+          <div className="d-flex gap-3 mt-1 flex-wrap justify-content-center">
             <Link to="/privacy" className="text-muted text-decoration-none footer-link" style={{ fontSize: "14px" }}>Privacy Policy</Link>
             <span className="text-muted" style={{ fontSize: "14px" }}>|</span>
             <Link to="/terms" className="text-muted text-decoration-none footer-link" style={{ fontSize: "14px" }}>Terms of Service</Link>
           </div>
-
         </div>
       </div>
     </footer>

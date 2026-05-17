@@ -23,15 +23,15 @@ function Hero() {
         className="row text-center border-top border-bottom py-4 mb-5"
         style={{ background: "#f8faff" }}
       >
-        <div className="col-4">
+        <div className="col-12 col-md-4 mb-3 mb-md-0">
           <h2 className="fw-bold" style={{ color: "#2563eb" }}>₹0</h2>
           <p className="text-muted mb-0" style={{ fontSize: "0.9rem" }}>Equity Delivery Brokerage</p>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-md-4 mb-3 mb-md-0">
           <h2 className="fw-bold" style={{ color: "#2563eb" }}>₹20</h2>
           <p className="text-muted mb-0" style={{ fontSize: "0.9rem" }}>Flat Intraday &amp; F&amp;O Fee</p>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-md-4">
           <h2 className="fw-bold" style={{ color: "#2563eb" }}>2025</h2>
           <p className="text-muted mb-0" style={{ fontSize: "0.9rem" }}>Founded</p>
         </div>
@@ -43,7 +43,7 @@ function Hero() {
         style={{ lineHeight: "1.9", fontSize: "1.1em" }}
       >
         <div className="row">
-          <div className="col-6 p-4">
+          <div className="col-12 col-lg-6 p-4">
             <h5 className="fw-semibold mb-3" style={{ color: "#1a1a2e" }}>Our Story</h5>
             <p>
               INVESTRO was born in 2025 from a simple frustration: India's retail
@@ -63,7 +63,7 @@ function Hero() {
               returns.
             </p>
           </div>
-          <div className="col-6 p-4">
+          <div className="col-12 col-lg-6 p-4">
             <h5 className="fw-semibold mb-3" style={{ color: "#1a1a2e" }}>Our Vision</h5>
             <p>
               We believe the next 100 million Indian investors shouldn't have to

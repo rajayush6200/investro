@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
+    setMobileNavOpen(false);
   };
-  const handleProfileClick = (index) => {
+  const handleProfileClick = () => {
     setProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
@@ -20,9 +23,8 @@ const Menu = () => {
       <a style={{ textDecoration: "none" }} href="http://localhost:3000">
         <img
           src="logo.png"
-          alt="logo"
+          alt="INVESTRO logo"
           style={{ cursor: "pointer", width: "50px" }}
-          alt="logo"
         />
         <span
           style={{
@@ -36,7 +38,19 @@ const Menu = () => {
         </span>
       </a>
 
-      <div className="menus">
+      <button
+        type="button"
+        className="menu-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded={mobileNavOpen}
+        onClick={() => setMobileNavOpen(!mobileNavOpen)}
+      >
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
+      </button>
+
+      <div className={`menus ${mobileNavOpen ? "menus-open" : ""}`}>
         <ul>
           <li>
             <Link
