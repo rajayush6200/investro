@@ -32,9 +32,31 @@ code {
    text-decoration: none;
 }
 
-.footer > a{
-  text-decoration: none;
-  
+.footer-link {
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block;
+}
+.footer-link:hover {
+  color: rgb(56, 126, 209) !important;
+  transform: translateX(3px);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background-color: rgb(56, 126, 209);
+  color: #fff !important;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(56, 126, 209, 0.25);
 }
 
 #heroPage{
