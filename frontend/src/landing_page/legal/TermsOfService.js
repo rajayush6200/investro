@@ -6,7 +6,7 @@ function TermsOfService() {
       <div className="row justify-content-center">
         <div className="col-md-8">
           <h1 className="mb-4 text-center fw-bold">Terms of Service</h1>
-          <p className="text-muted text-center mb-5">Last Updated: January 1, 2025</p>
+          <p className="text-muted text-center mb-5">Last Updated: July 1, 2025</p>
           
           <div className="content text-muted" style={{ lineHeight: '1.8' }}>
             <h4 className="fw-bold text-dark mt-4">1. Acceptance of Terms</h4>
@@ -50,7 +50,7 @@ function TermsOfService() {
             <p>These Terms shall be governed by and construed in accordance with the laws of India, specifically the jurisdiction of Karnataka. Any legal disputes, controversies, or claims arising out of or relating to this agreement shall be subject to the exclusive jurisdiction of the state and federal courts located in Bengaluru.</p>
 
             <h4 className="fw-bold text-dark mt-4">12. Contact Information</h4>
-            <p>If you have any questions regarding these Terms of Service, please contact our legal department at <strong>legal@investro.com</strong>.</p>
+            <p>If you have any questions regarding these Terms of Service, please contact our legal department at <strong>rajayush6200@gmail.com</strong>.</p>
           </div>
         </div>
       </div>

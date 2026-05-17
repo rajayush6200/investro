@@ -6,7 +6,7 @@ function PrivacyPolicy() {
       <div className="row justify-content-center">
         <div className="col-md-8">
           <h1 className="mb-4 text-center fw-bold">Privacy Policy</h1>
-          <p className="text-muted text-center mb-5">Last Updated: January 1, 2025</p>
+          <p className="text-muted text-center mb-5">Last Updated: July 1, 2025</p>
           
           <div className="content text-muted" style={{ lineHeight: '1.8' }}>
             <h4 className="fw-bold text-dark mt-4">1. Introduction</h4>
@@ -70,7 +70,7 @@ function PrivacyPolicy() {
 
             <h4 className="fw-bold text-dark mt-4">10. Contact Us</h4>
             <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data processing practices, please reach out to our Data Protection Officer at:</p>
-            <p className="mb-0"><strong>Email:</strong> privacy@investro.com</p>
+            <p className="mb-0"><strong>Email:</strong> rajayush6200@gmail.com</p>
             <p><strong>Address:</strong> INVESTRO Headquarters, 4th Cross, Dollars Colony, Bengaluru, India.</p>
           </div>
         </div>
