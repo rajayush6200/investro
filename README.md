@@ -258,65 +258,65 @@ INVESTRO follows a **decoupled three-tier architecture** — two React SPAs shar
 ```mermaid
 sequenceDiagram
     participant U as User Browser
-    participant F as Frontend / Dashboard
+    participant F as Frontend Dashboard
     participant A as Express API
     participant M as MongoDB
 
-  U->>F: Login (email, password)
-  F->>A: POST /login
-  A->>M: Find user + bcrypt compare
-  M-->>A: User document
-  A-->>F: { success, token }
-  F->>F: localStorage.setItem("token")
-  F->>A: GET /dashboard (Authorization: Bearer)
-  A->>A: verifyUser → decode JWT
-  A->>M: Find user by ID
-  M-->>A: User data
-  A-->>F: { username }
-  F-->>U: Render protected UI
+    U->>F: Login with email and password
+    F->>A: POST /login
+    A->>M: Find user and bcrypt compare
+    M-->>A: User document
+    A-->>F: JWT token response
+    F->>F: Save token in localStorage
+    F->>A: GET /dashboard with Bearer token
+    A->>A: verifyUser decodes JWT
+    A->>M: Find user by ID
+    M-->>A: User data
+    A-->>F: Username payload
+    F-->>U: Render protected UI
 ```
 
 ### Authentication Flow
 
 ```mermaid
 flowchart TD
-    A[Landing /login or /signup] --> B{Valid credentials?}
-    B -->|No| C[Toast error]
-    B -->|Yes| D[Receive JWT token]
-    D --> E[Store in localStorage]
-    E --> F[Redirect to Dashboard :3001?token=...]
-    F --> G[Home.js extracts token → localStorage]
-    G --> H[GET /dashboard with Bearer header]
+    A["Landing login or signup"] --> B{Valid credentials?}
+    B -->|No| C["Toast error"]
+    B -->|Yes| D["Receive JWT token"]
+    D --> E["Store in localStorage"]
+    E --> F["Redirect to Dashboard port 3001"]
+    F --> G["Home.js saves token to localStorage"]
+    G --> H["GET /dashboard with Bearer header"]
     H --> I{verifyUser middleware}
-    I -->|Invalid / missing| J[Redirect to /login]
-    I -->|Valid| K[Dashboard rendered]
-    K --> L[All API calls include Authorization header]
+    I -->|Invalid or missing| J["Redirect to login page"]
+    I -->|Valid| K["Dashboard rendered"]
+    K --> L["All API calls use Authorization header"]
 ```
 
 ### Frontend ↔ Backend Communication
 
 ```mermaid
 flowchart LR
-    subgraph Clients
-        FE[Frontend :3000]
-        DB[Dashboard :3001]
+    subgraph Clients["Client Apps"]
+        FE["Frontend port 3000"]
+        DASH["Dashboard port 3001"]
     end
 
-    subgraph API["Express API :4000"]
-        AUTH[Auth Routes]
-        DATA[Data Routes]
-        MW[verifyUser]
+    subgraph API["Express API port 4000"]
+        AUTH["Auth Routes"]
+        DATA["Data Routes"]
+        MW["verifyUser middleware"]
     end
 
-    subgraph Store[(MongoDB investro)]
-        U[(users)]
-        H[(holdings)]
-        P[(positions)]
-        O[(orders)]
+    subgraph Store["MongoDB investro"]
+        U["users collection"]
+        H["holdings collection"]
+        P["positions collection"]
+        O["orders collection"]
     end
 
-    FE -->|POST /login /signup| AUTH
-    DB -->|GET /allHoldings /allOrders| MW
+    FE -->|POST login signup| AUTH
+    DASH -->|GET holdings orders| MW
     MW --> DATA
     AUTH --> U
     DATA --> H
@@ -330,35 +330,35 @@ flowchart LR
 erDiagram
     USERS ||--o{ ORDERS : places
     USERS {
-        ObjectId _id PK
-        string email UK
+        string id PK
+        string email
         string username
         string password
     }
     ORDERS {
-        ObjectId _id PK
+        string id PK
         string name
-        number qty
-        number price
+        int qty
+        float price
         string mode
         string userId FK
     }
     HOLDINGS {
-        ObjectId _id PK
+        string id PK
         string name
-        number qty
-        number avg
-        number price
+        int qty
+        float avg
+        float price
         string net
         string day
     }
     POSITIONS {
-        ObjectId _id PK
+        string id PK
         string product
         string name
-        number qty
-        number avg
-        number price
+        int qty
+        float avg
+        float price
         string net
         string day
         boolean isLoss
@@ -369,37 +369,37 @@ erDiagram
 
 ```mermaid
 flowchart TB
-    subgraph Users
-        B[Browser]
+    subgraph Users["Users"]
+        B["Browser"]
     end
 
     subgraph Render["Render Cloud"]
-        RF[investro-frontend.onrender.com]
-        RD[investro-dashboard.onrender.com]
-        RB[API Service :4000]
+        RF["investro-frontend.onrender.com"]
+        RD["investro-dashboard.onrender.com"]
+        RB["API Service port 4000"]
     end
 
     subgraph Atlas["MongoDB Atlas"]
-        DB[(investro database)]
+        MDB["investro database"]
     end
 
     B --> RF
     B --> RD
     RF --> RB
     RD --> RB
-    RB --> DB
+    RB --> MDB
 ```
 
 ### Dark Mode Theme Flow
 
 ```mermaid
 flowchart LR
-    T[Theme Toggle] --> C[ThemeContext]
-    C --> LS[(localStorage investro-theme)]
-    C --> DOM[data-theme on html]
-    DOM --> CSS[CSS Variables]
-    CSS --> FE[Frontend Bootstrap]
-    CSS --> DB[Dashboard Components]
+    T["Theme Toggle"] --> C["ThemeContext"]
+    C --> LS["localStorage investro-theme"]
+    C --> DOM["data-theme on html"]
+    DOM --> CSS["CSS Variables"]
+    CSS --> FE["Frontend Bootstrap"]
+    CSS --> DASH["Dashboard Components"]
     LS -->|page reload| DOM
 ```
 
@@ -834,7 +834,7 @@ Please follow existing code style and keep PRs focused.
 Distributed under the **MIT License**. See `LICENSE` for full text.
 
 ```
-MIT License — Copyright (c) 2025 Ayush Raj
+MIT License — Copyright (c) 2026 Ayush Raj
 ```
 
 ---
@@ -866,7 +866,7 @@ Founder & Engineer — INVESTRO
 
 <sub>Built with discipline. Designed for India's next generation of investors.</sub>
 
-**INVESTRO** · © 2025 Ayush Raj · All rights reserved.
+**INVESTRO** · © 2026 Ayush Raj · All rights reserved.
 
 </div>
 
