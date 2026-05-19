@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
+import { API_BASE_URL } from "../config/urls";
 
 const SellActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
@@ -13,7 +14,7 @@ const SellActionWindow = ({ uid }) => {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:4000/newOrder",
+        `${API_BASE_URL}/newOrder`,
         { name: uid, qty: stockQuantity, price: stockPrice, mode: "SELL" },
         { headers: { Authorization: `Bearer ${token}` } }
       );

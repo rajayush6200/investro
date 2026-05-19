@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "../theme/ThemeToggle";
+import { FRONTEND_URL } from "../config/urls";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
@@ -21,7 +22,7 @@ const Menu = () => {
   return (
     <div className="menu-container ">
       {/* <img src="logo.png" style={{ width: "50px" }} alt="logo" /> */}
-      <a className="menu-home-link" style={{ textDecoration: "none" }} href="http://localhost:3000">
+      <a className="menu-home-link" style={{ textDecoration: "none" }} href={FRONTEND_URL}>
         <img
           src="logo.png"
           alt="INVESTRO logo"

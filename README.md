@@ -513,7 +513,7 @@ investro/
 ### Example — Login
 
 ```bash
-curl -X POST http://localhost:4000/login \
+curl -X POST https://investro-api.onrender.com/login \
   -H "Content-Type: application/json" \
   -d '{"email":"user@example.com","password":"yourpassword"}'
 ```
@@ -528,7 +528,7 @@ curl -X POST http://localhost:4000/login \
 ### Example — Protected Request
 
 ```bash
-curl http://localhost:4000/allOrders \
+curl https://investro-api.onrender.com/allOrders \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
@@ -593,7 +593,7 @@ Engineered for touch: action buttons remain accessible without hover on mobile.
 | Password hashing (bcrypt, 12 rounds) | Implemented |
 | JWT with secret (`TOKEN_KEY`) | Implemented |
 | Protected route middleware | Implemented |
-| CORS whitelist (localhost + Render) | Implemented |
+| CORS whitelist (Render production origins) | Implemented |
 | User-scoped orders query | Implemented |
 | Bearer token (not cookie-only) | Implemented |
 
@@ -681,7 +681,7 @@ npm install
 npm start
 ```
 
-Opens at **http://localhost:3000**
+Opens at **https://investro.onrender.com** (production) or `http://localhost:3000` (local dev)
 
 ### 4. Dashboard setup
 
@@ -691,15 +691,15 @@ npm install
 npm start
 ```
 
-Opens at **http://localhost:3001**
+Opens at **https://investro-dashboard.onrender.com** (production) or `http://localhost:3001` (local dev)
 
 ### 5. Verify the stack
 
 | Check | URL |
 |-------|-----|
-| API health | http://localhost:4000/ |
-| Landing | http://localhost:3000/ |
-| Dashboard | http://localhost:3001/ (after login) |
+| API health | https://investro-api.onrender.com/ |
+| Landing | https://investro.onrender.com/ |
+| Dashboard | https://investro-dashboard.onrender.com/ (after login) |
 
 ---
 
@@ -715,13 +715,15 @@ Opens at **http://localhost:3001**
 
 ### Frontend / Dashboard
 
-Currently use **hardcoded API URLs** for local dev (`http://localhost:4000`). For production, centralize:
+Production URLs are centralized in `frontend/src/config/urls.js` and `dashboard/src/config/urls.js`:
 
-```env
-REACT_APP_API_URL=https://your-api.onrender.com
-```
+| Constant | Production URL |
+|----------|----------------|
+| `API_BASE_URL` | `https://investro-api.onrender.com` |
+| `FRONTEND_URL` | `https://investro.onrender.com` |
+| `DASHBOARD_URL` | `https://investro-dashboard.onrender.com` |
 
-> **Tip:** Create `.env` in each React app and replace axios base URLs with `process.env.REACT_APP_API_URL`.
+> **Tip:** For local development, temporarily point these constants at `http://localhost:4000`, `http://localhost:3000`, and `http://localhost:3001`, or switch to `REACT_APP_*` env vars.
 
 ---
 
@@ -729,11 +731,11 @@ REACT_APP_API_URL=https://your-api.onrender.com
 
 INVESTRO is configured for **Render** (URLs whitelisted in backend CORS):
 
-| Service | Example URL |
-|---------|-------------|
-| Frontend | `https://investro-frontend.onrender.com` |
+| Service | Production URL |
+|---------|----------------|
+| Frontend | `https://investro.onrender.com` |
 | Dashboard | `https://investro-dashboard.onrender.com` |
-| API | Your Render web service |
+| API | `https://investro-api.onrender.com` |
 
 ### Deployment checklist
 

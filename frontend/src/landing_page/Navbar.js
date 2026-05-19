@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ThemeToggle from "../theme/ThemeToggle";
+import { API_BASE_URL, DASHBOARD_URL, FRONTEND_URL } from "../config/urls";
 
 function Navbar() {
   const [isAuth, setIsAuth] = useState(false);
@@ -14,7 +15,7 @@ function Navbar() {
         if (!token) return setIsAuth(false);
 
         const res = await axios.get(
-          "http://localhost:4000/dashboard",
+          `${API_BASE_URL}/dashboard`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // ✅ send token
@@ -37,7 +38,7 @@ function Navbar() {
 const handleLogout = () => {
   localStorage.removeItem("token");
   setIsAuth(false);
-  window.location.href = "http://localhost:3000"; // ✅ no /login
+  window.location.href = FRONTEND_URL;
 };
 
   return (
@@ -81,7 +82,7 @@ const handleLogout = () => {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="http://localhost:3001"
+                    href={DASHBOARD_URL}
                   >
                     Dashboard
                   </a>{" "}

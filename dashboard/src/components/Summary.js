@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../config/urls";
 
 const Summary = () => {
   const [username, setUsername] = useState("");
@@ -7,7 +8,7 @@ const Summary = () => {
  useEffect(() => {
   const token = localStorage.getItem("token");
   axios
-    .get("http://localhost:4000/dashboard", {
+    .get(`${API_BASE_URL}/dashboard`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => setUsername(res.data.username))

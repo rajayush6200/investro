@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DataCard, DataCardList } from "./DataCard";
+import { API_BASE_URL } from "../config/urls";
 
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
@@ -8,7 +9,7 @@ const Positions = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:4000/allPositions", {
+      .get(`${API_BASE_URL}/allPositions`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAllPositions(res.data))

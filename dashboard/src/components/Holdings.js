@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 import { DataCard, DataCardList } from "./DataCard";
+import { API_BASE_URL } from "../config/urls";
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
@@ -9,7 +10,7 @@ const Holdings = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:4000/allHoldings", {
+      .get(`${API_BASE_URL}/allHoldings`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAllHoldings(res.data));

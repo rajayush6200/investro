@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
+import { API_BASE_URL, FRONTEND_URL } from "../config/urls";
 
 const Home = () => {
 
@@ -19,7 +20,7 @@ const Home = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No token");
 
-        await axios.get("http://localhost:4000/dashboard", {
+        await axios.get(`${API_BASE_URL}/dashboard`, {
           headers: {
             Authorization: `Bearer ${token}`, // ✅ send token
           },
@@ -29,7 +30,7 @@ const Home = () => {
       } catch (err) {
         console.log("Not authorized ❌");
         // ✅ redirect to frontend login
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = `${FRONTEND_URL}/login`;
       }
     };
 

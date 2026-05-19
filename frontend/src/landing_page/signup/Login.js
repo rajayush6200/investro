@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
+import { API_BASE_URL, DASHBOARD_URL } from "../../config/urls";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -22,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        `${API_BASE_URL}/login`,
         inputValue,
       );
       console.log(data);
@@ -31,7 +32,7 @@ const Login = () => {
         localStorage.setItem("token", data.token); // ✅ save token
         toast.success("Login Successful");
         setTimeout(() => {
-          window.location.href = `http://localhost:3001?token=${data.token}`;
+          window.location.href = `${DASHBOARD_URL}?token=${data.token}`;
         }, 1000);
       } else {
         toast.error(data.message || "Error");

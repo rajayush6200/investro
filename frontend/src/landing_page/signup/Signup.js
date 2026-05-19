@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
+import { API_BASE_URL, DASHBOARD_URL } from "../../config/urls";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        `${API_BASE_URL}/signup`,
         inputValue,
       );
 
@@ -33,7 +34,7 @@ const Signup = () => {
         localStorage.setItem("token", data.token); // ✅ save token
         toast.success("signup Successful");
         setTimeout(() => {
-          window.location.href = `http://localhost:3001?token=${data.token}`;
+          window.location.href = `${DASHBOARD_URL}?token=${data.token}`;
         }, 1000);
       } else {
         toast.error(data.message || "Error");

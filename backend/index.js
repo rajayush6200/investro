@@ -14,6 +14,7 @@ const { OrdersModel } = require("./model/OrdersModel.js");
 
 const { createToken } = require("./util/token");
 const { verifyUser } = require("./middleware/authMiddleware");
+const { ALLOWED_ORIGINS } = require("./config/urls");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -24,12 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "https://investro-frontend.onrender.com",
-      "https://investro-dashboard.onrender.com",
-    ],
+    origin: ALLOWED_ORIGINS,
     credentials: true,
   })
 );
