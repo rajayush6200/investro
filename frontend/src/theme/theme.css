@@ -79,10 +79,13 @@ body,
     color 0.25s ease;
 }
 
-/* Navbar — sticky across all pages */
+/* Navbar — fixed at top of viewport on all pages */
 .investro-navbar {
-  position: sticky !important;
+  position: fixed !important;
   top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 1030 !important;
   background-color: var(--navbar-bg) !important;
   border-color: var(--border-color) !important;
@@ -94,13 +97,13 @@ body,
     box-shadow 0.25s ease;
 }
 
-/* Add shadow on scroll to visually separate navbar from content */
+/* Drop shadow when page scrolls — added via JS scroll listener */
 .investro-navbar.scrolled {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 [data-theme="dark"] .investro-navbar.scrolled {
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] .investro-navbar .navbar-toggler-icon {

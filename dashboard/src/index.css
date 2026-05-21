@@ -909,7 +909,8 @@ hr {
 html,
 body,
 #root {
-  overflow-x: hidden;
+  /* NOTE: overflow-x:hidden on body breaks position:sticky on the topbar.
+     Use max-width:100% instead to prevent horizontal scrollbar. */
   max-width: 100%;
 }
 

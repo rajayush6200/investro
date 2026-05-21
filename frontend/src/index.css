@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* NOTE: overflow-x:hidden on body/html breaks position:sticky — do NOT add it here.
+     Horizontal overflow is prevented via max-width on inner containers instead. */
 }
 
 code {
@@ -13,8 +14,9 @@ code {
     monospace;
 }
 
-html {
-  overflow-x: hidden;
+html,
+#root {
+  max-width: 100%;
 }
 
 img {
@@ -127,10 +129,16 @@ img {
   }
 }
 
+/* Offset content below fixed navbar (approx Bootstrap navbar height) */
+.app-shell {
+  padding-top: 60px;
+}
+
 .app-shell--auth {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
 }
 
 .app-shell--auth .main {

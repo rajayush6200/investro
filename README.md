@@ -190,22 +190,6 @@ The long-term goal is a **full operating system for personal finance** — execu
   </table>
 </div>
 
-<details>
-<summary><strong>📸 Screenshot capture checklist</strong></summary>
-
-| # | Screen | Viewport |
-|---|--------|----------|
-| 1 | Homepage hero | Desktop 1440px |
-| 2 | About / Founder | Desktop |
-| 3 | Dashboard Summary | Desktop 1440px |
-| 4 | Holdings + bar chart | Desktop |
-| 5 | Watchlist hover actions | Desktop |
-| 6 | Dark mode — landing + dashboard | Both themes |
-| 7 | Mobile — nav + watchlist drawer | 390px width |
-| 8 | Login / Signup | Desktop |
-
-</details>
-
 ---
 
 ## Tech Stack
