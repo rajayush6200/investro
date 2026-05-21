@@ -140,24 +140,52 @@ The long-term goal is a **full operating system for personal finance** — execu
 
 ## Screenshots
 
-> Add captures to `docs/screenshots/` for a polished GitHub gallery. Recommended filenames below.
+> Add captures to `docs/screenshots/` for a polished GitHub gallery.
 
-<table>
-<tr>
-<td width="50%" align="center"><strong>Homepage</strong><br/><br/><img src="docs/screenshots/homepage.png" alt="INVESTRO Homepage" width="100%" /><br/><sub><code>docs/screenshots/homepage.png</code></sub></td>
-<td width="50%" align="center"><strong>Trading Dashboard</strong><br/><br/><img src="docs/screenshots/dashboard.png" alt="INVESTRO Dashboard" width="100%" /><br/><sub><code>docs/screenshots/dashboard.png</code></sub></td>
-</tr>
-<tr>
-<td align="center"><strong>Dark Mode</strong><br/><br/><img src="docs/screenshots/dark-mode.png" alt="Dark Mode" width="100%" /><br/><sub><code>docs/screenshots/dark-mode.png</code></sub></td>
-<td align="center"><strong>Watchlist</strong><br/><br/><img src="docs/screenshots/watchlist.png" alt="Watchlist" width="100%" /><br/><sub><code>docs/screenshots/watchlist.png</code></sub></td>
-</tr>
-<tr>
-<td align="center"><strong>Mobile Layout</strong><br/><br/><img src="docs/screenshots/mobile.png" alt="Mobile View" width="100%" /><br/><sub><code>docs/screenshots/mobile.png</code></sub></td>
-<td align="center"><strong>Authentication</strong><br/><br/><img src="docs/screenshots/auth.png" alt="Login / Signup" width="100%" /><br/><sub><code>docs/screenshots/auth.png</code></sub></td>
-</tr>
-<tr>
-<td colspan="2" align="center"><strong>Buy / Sell Modal</strong><br/><br/><img src="docs/screenshots/trading-modal.png" alt="Trading UI" width="80%" /><br/><sub><code>docs/screenshots/trading-modal.png</code></sub></td>
-</tr>
+### 💻 Desktop Views
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <strong>Homepage</strong><br/><br/>
+      <img src="docs/screenshots/homepage.png" alt="INVESTRO Homepage" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <strong>Trading Dashboard</strong><br/><br/>
+      <img src="docs/screenshots/dashboard.png" alt="INVESTRO Dashboard" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <strong>Dark Mode</strong><br/><br/>
+      <img src="docs/screenshots/dark-mode.png" alt="Dark Mode" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <strong>Watchlist</strong><br/><br/>
+      <img src="docs/screenshots/watchlist.png" alt="Watchlist" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <strong>Authentication</strong><br/><br/>
+      <img src="docs/screenshots/auth.png" alt="Login / Signup" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <strong>Buy / Sell Modal</strong><br/><br/>
+      <img src="docs/screenshots/trading-modal.png" alt="Trading UI" width="100%" />
+    </td>
+  </tr>
+</table>
+
+### 📱 Mobile View
+
+<table width="100%">
+  <tr>
+    <td width="100%" align="center" valign="top">
+      <strong>Mobile Layout</strong><br/><br/>
+      <img src="docs/screenshots/mobile.png" alt="Mobile View" width="280" />
+    </td>
+  </tr>
 </table>
 
 <details>
