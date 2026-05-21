@@ -140,8 +140,6 @@ The long-term goal is a **full operating system for personal finance** — execu
 
 ## Screenshots
 
-> Add captures to `docs/screenshots/` for a polished GitHub gallery.
-
 ### 💻 Desktop Views
 
 <table width="100%">
