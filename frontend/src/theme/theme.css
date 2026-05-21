@@ -79,13 +79,28 @@ body,
     color 0.25s ease;
 }
 
-/* Navbar */
+/* Navbar — sticky across all pages */
 .investro-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1030 !important;
   background-color: var(--navbar-bg) !important;
   border-color: var(--border-color) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition:
     background-color 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Add shadow on scroll to visually separate navbar from content */
+.investro-navbar.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .investro-navbar.scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
 [data-theme="dark"] .investro-navbar .navbar-toggler-icon {

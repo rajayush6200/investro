@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ThemeToggle from "../theme/ThemeToggle";
@@ -6,6 +6,7 @@ import { API_BASE_URL, DASHBOARD_URL, FRONTEND_URL } from "../config/urls";
 
 function Navbar() {
   const [isAuth, setIsAuth] = useState(false);
+  const navRef = useRef(null);
 
   // check login
   useEffect(() => {
@@ -34,15 +35,32 @@ function Navbar() {
     checkAuth();
   }, []);
 
+  // scroll shadow effect on sticky navbar
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 4) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // logout
-const handleLogout = () => {
-  localStorage.removeItem("token");
-  setIsAuth(false);
-  window.location.href = FRONTEND_URL;
-};
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuth(false);
+    window.location.href = FRONTEND_URL;
+  };
 
   return (
-    <nav className="navbar navbar-expand-lg border-bottom investro-navbar">
+    <nav ref={navRef} className="navbar navbar-expand-lg border-bottom investro-navbar">
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img src="/media/images/logo.svg" alt="INVESTRO logo" />

@@ -179,14 +179,16 @@ The long-term goal is a **full operating system for personal finance** — execu
 
 ### 📱 Mobile View
 
-<table width="100%">
-  <tr>
-    <td width="100%" align="center" valign="top">
-      <strong>Mobile Layout</strong><br/><br/>
-      <img src="docs/screenshots/mobile.png" alt="Mobile View" width="280" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" valign="top">
+        <strong>Mobile Layout</strong><br/><br/>
+        <img src="docs/screenshots/mobile.png" alt="Mobile View" width="320" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 <details>
 <summary><strong>📸 Screenshot capture checklist</strong></summary>
