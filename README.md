@@ -15,14 +15,14 @@
 [![Chart.js](https://img.shields.io/badge/Charts-Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)](https://www.chartjs.org/)
 
 [![MERN](https://img.shields.io/badge/Stack-MERN-512BD4?style=flat-square)](https://github.com/rajayush6200/investro)
-[![Responsive](https://img.shields.io/badge/UI-Fully_Responsive-2ea44f?style=flat-square)](#-responsive-design)
-[![Dark Mode](https://img.shields.io/badge/Theme-Light_%2F_Dark-1a1a2e?style=flat-square)](#-dark-mode-system)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](#-license)
-[![Status](https://img.shields.io/badge/Status-Active_Development-success?style=flat-square)](#-roadmap)
+[![Responsive](https://img.shields.io/badge/UI-Fully_Responsive-2ea44f?style=flat-square)](#responsive-design)
+[![Dark Mode](https://img.shields.io/badge/Theme-Light_%2F_Dark-1a1a2e?style=flat-square)](#dark-mode-system)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](#license)
+[![Status](https://img.shields.io/badge/Status-Active_Development-success?style=flat-square)](#roadmap)
 
 <br />
 
-[**Live Demo**](https://investro.onrender.com/) · [**Features**](#-features) · [**Architecture**](#-architecture) · [**Setup**](#-installation--local-development) · [**API**](#-api-reference) · [**Roadmap**](#-roadmap)
+[**Live Demo**](https://investro.onrender.com/) · [**Features**](#features) · [**Architecture**](#architecture) · [**Setup**](#installation--local-development) · [**API**](#api-reference) · [**Roadmap**](#roadmap)
 
 <br />
 
@@ -38,32 +38,57 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Why INVESTRO?](#-why-investro)
-- [Features](#-features)
-- [Screenshots](#-screenshots)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [System Diagrams](#-system-diagrams)
-- [Folder Structure](#-folder-structure)
-- [Authentication Flow](#-authentication-flow)
-- [API Reference](#-api-reference)
-- [Database Design](#-database-design)
-- [Dark Mode System](#-dark-mode-system)
-- [Responsive Design](#-responsive-design)
-- [Security](#-security)
-- [Performance & UX](#-performance--ux)
-- [Developer Experience](#-developer-experience)
-- [Installation & Local Development](#-installation--local-development)
-- [Environment Variables](#-environment-variables)
-- [Production Deployment](#-production-deployment)
-- [Challenges Solved](#-challenges-solved)
-- [Learning Outcomes](#-learning-outcomes)
-- [Scalability Vision](#-scalability-vision)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
+- [Overview](#overview)
+- [Why INVESTRO?](#why-investro)
+- [Features](#features)
+  - [Platform & Trading UI](#platform--trading-ui)
+  - [Authentication & Data](#authentication--data)
+  - [UI / UX Excellence](#ui--ux-excellence)
+- [Screenshots](#screenshots)
+  - [Desktop Views](#-desktop-views)
+  - [Mobile View](#-mobile-view)
+- [Tech Stack](#tech-stack)
+  - [Frontend](#frontend-landing---frontend)
+  - [Dashboard](#dashboard-terminal---dashboard)
+  - [Backend](#backend-backend)
+  - [DevOps & Tooling](#devops--tooling)
+- [Architecture](#architecture)
+- [System Diagrams](#system-diagrams)
+  - [High-Level Request Lifecycle](#high-level-request-lifecycle)
+  - [Authentication Flow](#authentication-flow)
+  - [Frontend ↔ Backend Communication](#frontend--backend-communication)
+  - [MongoDB Schema Relationships](#mongodb-schema-relationships)
+  - [Deployment Architecture](#deployment-architecture)
+  - [Dark Mode Theme Flow](#dark-mode-theme-flow)
+- [Folder Structure](#folder-structure)
+- [Auth Implementation](#auth-implementation)
+- [API Reference](#api-reference)
+  - [Public Routes](#public-routes)
+  - [Protected Routes](#protected-routes-authorization-bearer-token)
+- [Database Design](#database-design)
+- [Dark Mode System](#dark-mode-system)
+- [Responsive Design](#responsive-design)
+- [Security](#security)
+- [Performance & UX](#performance--ux)
+- [Developer Experience](#developer-experience)
+- [Installation & Local Development](#installation--local-development)
+  - [Prerequisites](#prerequisites)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Backend Setup](#2-backend-setup)
+  - [3. Frontend Setup](#3-frontend-setup)
+  - [4. Dashboard Setup](#4-dashboard-setup)
+  - [5. Verify the Stack](#5-verify-the-stack)
+- [Environment Variables](#environment-variables)
+- [Production Deployment](#production-deployment)
+  - [Deployment Checklist](#deployment-checklist)
+  - [Build Commands](#build-commands)
+- [Challenges Solved](#challenges-solved)
+- [Learning Outcomes](#learning-outcomes)
+- [Scalability Vision](#scalability-vision)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -487,7 +512,7 @@ investro/
 
 ---
 
-## Authentication Flow
+## Auth Implementation
 
 1. User submits credentials on **Login** or **Signup** (`frontend`).
 2. API validates input, hashes passwords on registration (`bcrypt` pre-save hook).
@@ -658,14 +683,14 @@ cd dashboard && npm start    # :3001
 - **npm** 9+
 - **MongoDB Atlas** account (or local MongoDB)
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/rajayush6200/investro.git
 cd investro
 ```
 
-### 2. Backend setup
+### 2. Backend Setup
 
 ```bash
 cd backend
@@ -685,7 +710,7 @@ npm start
 node seed.js   # optional: seed holdings & positions
 ```
 
-### 3. Frontend setup
+### 3. Frontend Setup
 
 ```bash
 cd frontend
@@ -695,7 +720,7 @@ npm start
 
 Opens at **https://investro.onrender.com** (production) or `http://localhost:3000` (local dev)
 
-### 4. Dashboard setup
+### 4. Dashboard Setup
 
 ```bash
 cd dashboard
@@ -705,7 +730,7 @@ npm start
 
 Opens at **https://investro-dashboard.onrender.com** (production) or `http://localhost:3001` (local dev)
 
-### 5. Verify the stack
+### 5. Verify the Stack
 
 | Check | URL |
 |-------|-----|
@@ -749,7 +774,7 @@ INVESTRO is configured for **Render** (URLs whitelisted in backend CORS):
 | Dashboard | `https://investro-dashboard.onrender.com` |
 | API | `https://investro-api.onrender.com` |
 
-### Deployment checklist
+### Deployment Checklist
 
 1. Deploy **backend** → set `MONGO_URL`, `TOKEN_KEY`, `PORT`
 2. Deploy **frontend** & **dashboard** as static sites
@@ -757,7 +782,7 @@ INVESTRO is configured for **Render** (URLs whitelisted in backend CORS):
 4. Point React apps to production API URL
 5. Run `node seed.js` once against production DB (dev/staging only)
 
-### Build commands
+### Build Commands
 
 ```bash
 # Frontend
